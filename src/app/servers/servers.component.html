@@ -1,3 +1,10 @@
 <h1>The Servers Component works</h1>
-<app-server></app-server>
-<app-server></app-server>
+<input type="button" class="btn btn-primary" [value]="value" [disabled]="!allowNewServer" (click)="onCreateServer()">
+<br>
+<!-- <input type="text" (input)="onUpdateServer($event)"> -->
+<input type="text" class ="form-control" [(ngModel)]="serverName">
+<p>{{'server'}} : {{serverName}}</p>
+<p *ngIf="servercreated">{{CreateServerStatus}}</p>
+
+<app-server *ngFor="let server of servers"></app-server>
+
